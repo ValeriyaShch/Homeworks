@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        let year = prompt("Ваш рік народження?");
+        let city = prompt("В якому місті ви живете?");
+        let sport = prompt("Який ваш улюблений вид спорту?");
+        let placeMessage = "";
+        let championMessage = "";
+        let ageMessage = "";
+
+        if (year === null) {
+            alert(`Шкода що ви не захотіли вводити свій рік народження`)
+        } else {
+            ageMessage = `Тобі ${2024 - year} років.`
+        }
+
+
+        if (city==="Київ") {
+            placeMessage = "Ти живеш у столиці України."
+        } else if (city==="Вашингтон") {
+            placeMessage = "Ти живеш у столиці США."
+        } else if (city==="Лондон") {
+            placeMessage = "Ти живеш у столиці Великобританії."
+        } else if (city===null) {
+            alert(`Шкода, що ви не захотіли ввести своє місто`)
+        } else {
+            placeMessage = `Ти живеш у місті ${city}.`
+
+        }
+
+        if (sport==="бокс") {
+            championMessage = " Круто! Хочеш стати Олександром Усиком?"
+        } else if (sport==="біг") {
+            championMessage = " Круто! Хочеш стати Усейном Болтом?"
+        } else if (sport==="футбол") {
+            championMessage = " Круто! Хочеш стати Кріштіану Рональду?"
+        } else if (sport===null) {
+            alert(`Шкода, що ви не захотіли ввести свій улюблений вид спорту`)
+        }
+
+        alert(`${ageMessage} ${placeMessage}${championMessage}`);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
