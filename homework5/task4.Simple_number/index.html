@@ -8,20 +8,25 @@
     <title>Document</title>
     <script>
         let num=prompt(`Введіть ціле число`);
-        let isSimple=true;
-        for(let divider=2; divider<num; divider++){
-            if(num % divider===0){
-                isSimple=false;
-                break;
+        if(num<=1){
+            alert('Введіть число більше 1');
+        } else {
+            let isSimple=true;
+
+            for(let divider=2; divider<num; divider++){
+                if(num % divider===0){
+                    isSimple=false;
+                    break;
+                }
             }
 
+            if(isSimple){
+                console.log(`Число ${num} - просте`);
+            } else {
+                console.log(`Число ${num} - складене`);
+            }
         }
 
-        if(isSimple){
-            console.log(`Число ${num} - просте`);
-        } else {
-            console.log(`Число ${num} - складене`);
-        }
 
     </script>
 </head>
