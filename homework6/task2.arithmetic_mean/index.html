@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function calcArithmeticMean(array) {
+            let sum=0;
+            let count=0;
+            for(let num of array) {
+            if (typeof num==='number'){
+                sum += num;
+                count++;
+            }
+            }
+            if(count===0) {
+                return 'В масиві немає числа';
+            }
+            return sum/count;
+        }
+        let testArray=[2, true, "cat", 45, "black", 99, null, {name:'Valeriia'}, 15.25];
+        console.log(calcArithmeticMean(testArray));
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
