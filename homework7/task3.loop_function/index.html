@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function getNumber() {
+            for (let i = 0; i < 10; i++) {
+                let input=prompt(`Введіть число більше 100:`);
+                if(input<=100 && i<9) {
+                    alert('Введіть число ще раз');
+                    continue;
+                }
+                console.log(input);
+                break;
+            }
+        }
+        getNumber();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
