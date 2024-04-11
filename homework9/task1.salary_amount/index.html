@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        let company = {
+            sales: [{name: 'John', salary: 1000}, {name: 'Alice', salary: 600 }],
+            development: {
+                web: [{name: 'Peter', salary: 2000}, {name: 'Alex', salary: 1800}],
+                internals: [{name: 'Jack', salary: 1300}]
+            }
+        }
+        function getSalary(department) {
+            if(Array.isArray(department)){
+                let salary = 0;
+                department.forEach((person) => salary += person.salary);
+                return salary;
+            } else {
+                let salary = 0;
+                let subdepartments = Object.values(department);
+                for (let subdepartment of subdepartments) {
+                    salary += getSalary(subdepartment)
+                }
+                return salary;
+            }
+        }
+        console.log (getSalary(company));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
