@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        let myContacts = {
+            contactBook: [
+                {name: 'Olha', tel: '0639631233', email:'olha.gmail.com'},
+                {name: 'Maksym', tel: '063121322', email:'maksim.gmail.com'},
+            ],
+            getContactByName: function(name) {
+                let foundContact = this.contactBook.find(contact => contact.name === name);
+                return foundContact;
+            },
+            addContact: function(name, tel, email) {
+                this.contactBook.push({name, tel, email});
+            }
+        }
+        console.log(myContacts.getContactByName('Olha'));
+        myContacts.addContact('Sarra', '0956363333','saara.gmail.com');
+        console.log(myContacts.getContactByName('Sarra'));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
