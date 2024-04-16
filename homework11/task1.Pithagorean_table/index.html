@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .td-border {
+            border: 1px solid black;
+            width:30px;
+            height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<table id="pithagoreanTable">
+
+</table>
+<script>
+    const table = document.getElementById('pithagoreanTable');
+for(let i = 1; i <=10; i++) {
+    const tr = document.createElement('tr');
+    for(let j = 1; j <=10; j++) {
+        const td = document.createElement('td');
+        td.innerText = `${i*j}`;
+        td.classList.add('td-border');
+        tr.appendChild(td);
+    }
+    table.appendChild(tr);
+}
+
+</script>
+</body>
+</html>
