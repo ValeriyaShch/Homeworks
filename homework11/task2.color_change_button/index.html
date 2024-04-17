@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red_color {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<p id="textToChange">some text</p>
+<button id="colorButton">Зміни колір</button>
+
+<script>
+    const text = document.getElementById('textToChange');
+    const button = document.getElementById('colorButton');
+    button.addEventListener('click', function () {
+        text.classList.toggle('red_color');
+    })
+</script>
+</body>
+</html>
