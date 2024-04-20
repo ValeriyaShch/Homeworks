@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<ul id="taskList">
+    <li>Завдання 1 <button>Видалити</button></li>
+    <li>Завдання 2 <button>Видалити</button></li>
+    <li>Завдання 3 <button>Видалити</button></li>
+</ul>
+    <input id="task" type="text" placeholder="Додати нове завдання"> <button id="addTask">Додати</button>
+
+<script>
+    const list = document.getElementById('taskList');
+    list.addEventListener('click', function (event) {
+        if (event.target.tagName === 'BUTTON') {
+           list.removeChild(event.target.parentElement);
+        }
+    })
+    const taskToAdd = document.getElementById('task');
+    const inputButton = document.getElementById('addTask');
+    inputButton.addEventListener('click', function(){
+        const taskDescription = taskToAdd.value;
+        const newTask = document.createElement('li');
+        const newButton = document.createElement('button');
+        newTask.innerText = taskDescription;
+        newButton.innerText = 'Видалити';
+        newTask.appendChild(newButton);
+        list.appendChild(newTask);
+    })
+
+</script>
+</body>
+</html>

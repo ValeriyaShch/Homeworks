@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<button id="userSite">Ввести посилання</button>
+<button id="anotherSite">Перейти на сайт</button>
+
+<script>
+    const userButton = document.getElementById('userSite');
+    const anotherLink = document.getElementById('anotherSite');
+    let userLink;
+
+    userButton.addEventListener('click', function () {
+        userLink = prompt('Введіть посилання для переходу:', 'https://wikipedia.org')
+    });
+    anotherLink.addEventListener('click', function () {
+        if (userLink === null || userLink === '' || userLink === undefined) {
+            alert('Ви не ввели посилання!')
+        } else {
+            location.href = userLink;
+        }
+
+    })
+</script>
+</body>
+</html>
