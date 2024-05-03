@@ -11,8 +11,7 @@
     let activeImageIndex = Array.from(list.children).indexOf(activeImage);
 
     const pagination = document.querySelector('.js--pagination');
-    const images = [...list.children];
-    const imagesCount = images.length;
+    const imagesCount = list.children.length;
     const firstImageIndex = 0;
     const lastImageIndex = imagesCount - 1;
 
@@ -64,17 +63,8 @@
 
             activeImageIndex = index;
 
-            if ((activeImageIndex + 1) === imagesCount) {
-                next.style.display = "none";
-            } else {
-                next.style.display = "flex";
-            }
-
-            if (activeImageIndex === 0) {
-                prev.style.display = "none";
-            } else {
-                prev.style.display = "flex";
-            }
+            next.style.display = (activeImageIndex + 1) === imagesCount ? "none" : "flex";
+            prev.style.display = activeImageIndex === 0 ? "none" : "flex";
         }
     })
 })()
