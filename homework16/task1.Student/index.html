@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function Student(name, lastname, birthday, marks) {
+            let _name = name;
+            let _lastname = lastname;
+            let _birthday = birthday;
+            let _attendance = new Array(25);
+            let _marks = marks;
+            let _nextclass = 0;
+
+            this.getAge = function () {
+                let todayYear = new Date().getFullYear();
+                return todayYear - _birthday;
+            }
+
+            this.present = function () {
+                if (_nextclass < 25) {
+                    _attendance[_nextclass] = true;
+                    _nextclass++;
+                } else {
+                    console.log('кількість занять-25')
+                }
+            }
+                this.absent = function () {
+                    if (_nextclass < 25) {
+                        _attendance[_nextclass] = false;
+                        _nextclass++;
+                    } else {
+                        console.log('кількість занять-25')
+                    }
+                }
+
+                this.getAverageMark = function() {
+                    let sum = 0;
+                    _marks.forEach((mark) => {
+                        sum += mark;
+                    })
+                    return  sum / _marks.length;
+                }
+
+                this.getAverageAttendance = function() {
+                    let countAttendance = 0;
+                    _attendance.forEach((visit) => {
+                        if (visit === true) {
+                            countAttendance++;
+                        }
+                    })
+                    return countAttendance / _attendance.length;
+                }
+
+                this.summary = function () {
+                    let averageMark = this.getAverageMark();
+                    let averageAttendance = this.getAverageAttendance();
+                    if (averageMark > 90 && averageAttendance > 0.9) {
+                        return 'Молодець!'
+                    } else if (averageMark < 90 && averageAttendance < 0.9) {
+                        return 'Редиска!';
+                    } else {
+                        return 'Добре, але можна краще';
+                    }
+                }
+        }
+
+        const studentValeriia = new Student('Valeriia', 'Scherbyna', 1992, [96, 100, 90]);
+        studentValeriia.present();
+        studentValeriia.present();
+        studentValeriia.present();
+        studentValeriia.present();
+        studentValeriia.present();
+        studentValeriia.absent();
+        console.log(studentValeriia.getAge())
+        console.log(studentValeriia.summary());
+
+        const studentMaksym = new Student('Maksym', 'Kazakov', 1991, [93, 95, 98, 90, 100]);
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+        studentMaksym.present();
+
+        console.log(studentMaksym.summary());
+        console.log(studentMaksym.getAverageAttendance());
+        console.log(studentMaksym.getAverageMark());
+
+       const studentIvan = new Student('Ivan', 'Gryanka', 1995, [50, 60, 90, 70]);
+       studentIvan.present();
+        studentIvan.absent();
+        studentIvan.absent();
+        studentIvan.absent();
+        studentIvan.absent();
+        studentIvan.present();
+        console.log(studentIvan.summary());
+        console.log(studentIvan.getAverageAttendance());
+        console.log(studentIvan.getAverageMark());
+        console.log(studentIvan.getAge());
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
