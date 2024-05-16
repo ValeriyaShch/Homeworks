@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h2 style="text-align: center">Таймер відліку</h2>
+<div style="text-align: center" id="timer"></div>
+<script>
+    class Timer {
+        constructor(minutes, seconds) {
+            this.time = (minutes * 60) + seconds;
+            this.timeElement = document.getElementById('timer');
+            this.timerId = setInterval(this.updateTimer, 1000);
+        }
+
+        updateTimer = () => {
+            const minutes = Math.floor(this.time / 60);
+            const seconds = this.time % 60;
+
+            const min = minutes.toString().padStart(2, '0');
+            const sec = seconds.toString().padStart(2, '0');
+
+            this.timeElement.textContent = `${min}:${sec}`;
+
+            if (this.time === 0) {
+                clearInterval(this.timerId);
+            } else {
+                this.time--;
+            }
+        }
+    }
+
+    const myTimer = new Timer(1,27)
+
+
+</script>
+</body>
+</html>
