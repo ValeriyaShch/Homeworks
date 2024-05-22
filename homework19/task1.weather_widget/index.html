@@ -59,7 +59,6 @@
         const windSpeed = data.wind.speed;
         wind.innerHTML = `Wind: ${windSpeed} km/h`;
         const degree = data.main.temp;
-        console.log(degree);
         temp.innerHTML = `${Math.floor(degree-273)}C`;
         const tempFeel = data.main.feels_like;
         feel.innerHTML = `Feels like:${Math.floor(tempFeel-273)}C`;
@@ -81,7 +80,6 @@
     async function getWeather() {
         const weatherResponse = await fetch('https://api.openweathermap.org/data/2.5/weather?lat=50.27&lon=30.31&appid=d0baf4f55bbb80782273bb08ba1441ad');
         const data = await weatherResponse.json();
-        console.log(data)
         getData(data);
     }
     getWeather();
