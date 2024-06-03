@@ -15,9 +15,9 @@ function ToDoList(data) {
     }
     this.template = function (task) {
         $taskList.append(`
-            <li data-id ="${task.id}" class="todo-item ${task.isDone ? 'todo-item--checked' : ''}" data-bs-toggle="modal" data-bs-target="#myModal">
+            <li data-id ="${task.id}" class="todo-item ${task.isDone ? 'todo-item--checked' : ''}" >
                 <input type="checkbox" name="done" ${task.isDone ? 'checked' : ''} class="js--checkbox">
-                <span class="todo-item__description">${task.text}</span>
+                <span class="todo-item__description" data-bs-toggle="modal" data-bs-target="#myModal">${task.text}</span>
                 <button class="todo-item__delete js--todo-item__delete">Видалити</button>
 
             </li>

@@ -58,7 +58,9 @@ h1, h2 {
 }
 .todo-item__description {
     flex-grow: 1;
+    display: block;
     padding-left: 10px;
+    line-height: 42px;
 }
 .todo-item__delete {
     background: #0be69d;
