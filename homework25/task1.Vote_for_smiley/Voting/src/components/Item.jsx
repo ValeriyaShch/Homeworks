@@ -1,12 +1,15 @@
 import { Component } from 'react';
-import image from '../assets/1.jpg'
-
 
 class Item extends Component {
     render() {
-        const {id, image} = this.props;
+        const { id, image, vote, onClick } = this.props;
+
         return (
-            <img src= {image} width={100}/>
+            <>
+                <img data-id={id} src={image} onClick={onClick} width={200}/>
+                <span>{vote}</span>
+            </>
+
         )
     }
 }
