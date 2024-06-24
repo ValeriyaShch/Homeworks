@@ -3,13 +3,16 @@ import Header from './components/Header.jsx';
 import Item from './components/Item.jsx';
 import Button from './components/Button.jsx';
 import Winner from './components/Winner.jsx';
-import defaultState from './state/defaultState.jsx';
+import defaultState from './state/defaultState.js';
 
 function App() {
     const [smilesData, setSmilesData] = useState(defaultState);
 
     useEffect(() => {
-        setSmilesData(JSON.parse(localStorage.getItem('smiles')) || defaultState);
+        const storageData = JSON.parse(localStorage.getItem('smiles'));
+        if (storageData) {
+            setSmilesData(storageData);
+        }
     }, []);
 
     useEffect(() => {
