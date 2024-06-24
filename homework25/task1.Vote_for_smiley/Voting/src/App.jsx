@@ -19,7 +19,6 @@ class App extends Component {
     }
 
     increaseVote(event) {
-        event.stopPropagation();
         const selectedId = event.target.dataset.id;
 
         this.setState((prevState) => {
@@ -66,7 +65,11 @@ class App extends Component {
                 <Button text="Show Results" onClick={this.showWinner} className="btn-primary me-2"/>
                 <Button text="Reset" onClick={this.resetVotes} className="btn-danger"/>
 
-                {this.state.isResultVisible && <Winner key={0} vote={this.state.maxVote} image={this.state.bestImage}/>}
+                {
+                    this.state.isResultVisible
+                    ? <Winner key={0} vote={this.state.maxVote} image={this.state.bestImage}/>
+                    : null
+                }
             </div>
         );
     }
