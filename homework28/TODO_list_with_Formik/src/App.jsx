@@ -1,11 +1,9 @@
 import {useState} from 'react'
 import TaskItem from "./components/TaskItem.jsx";
 import Header from "./components/Header.jsx";
-import Form from "./components/Form.jsx";
-import { Formik, Form } from 'formik';
+import Input from "./components/Input.jsx";
 function App() {
     const [tasks, setTasks] = useState([]);
-    const [taskText, setTaskText] = useState('');
 
     const handleAddTask = (taskValue) => {
         if (taskValue.trim()) {
@@ -15,7 +13,6 @@ function App() {
                 isDone: false,
             };
             setTasks((prevTasks) => [...prevTasks, newTask]);
-            setTaskText('');
         }
     };
 
@@ -34,20 +31,7 @@ function App() {
     return (
         <div className="container">
             <Header />
-            <Form onSubmit={handleAddTask}/>
-            {/*<form className="form" onSubmit={handleAddTask}>*/}
-            {/*    <input*/}
-            {/*        type="text"*/}
-            {/*        name="value"*/}
-            {/*        required*/}
-            {/*        className="form__input"*/}
-            {/*        value={taskText}*/}
-            {/*        onChange={(e) => setTaskText(e.target.value)}*/}
-            {/*    />*/}
-            {/*    <button type="submit" className="form__btn">*/}
-            {/*        Додати*/}
-            {/*    </button>*/}
-            {/*</form>*/}
+            <Input onSubmit={handleAddTask}/>
             <ul className="js--todos-wrapper">
                 {tasks.map((task) => (
                     <TaskItem
