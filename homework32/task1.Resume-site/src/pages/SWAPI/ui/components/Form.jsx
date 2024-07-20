@@ -1,13 +1,13 @@
 import {useDispatch, useSelector} from "react-redux";
-import swapiSlice from "../../core/redux/slice.js";
-import selectors from "../../core/redux/selectors.js";
-import {swapiAsyncActins} from "../../core/saga/asyncActions.js";
+import swapiSlice from "../../../../shared/core/redux/Slices/swapiSlice.js";
+import swapiSelectors from "../../../../shared/core/redux/Selectors/swapiSelectors.js";
+import {swapiAsyncActins} from "../../../../shared/core/saga/asyncActions.js";
 import {Box, Button, Chip, FormControl, InputLabel, Paper, OutlinedInput, Typography} from "@mui/material";
 
 export default function Form() {
     const dispatcher = useDispatch();
-    const isLoading = useSelector(selectors.loader)
-    const defaultAction = useSelector(selectors.action)
+    const isLoading = useSelector(swapiSelectors.loader)
+    const defaultAction = useSelector(swapiSelectors.action)
     const onSubmit = async (event) => {
         event.preventDefault();
         dispatcher(swapiAsyncActins.getSwapiDataAsync(event.target.url.value))

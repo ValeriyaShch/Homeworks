@@ -1,6 +1,6 @@
 import TaskItem from "./TaskItem.jsx";
 import {useSelector} from "react-redux";
-import selectors from "../../core/selectors.js";
+import selectors from "../../../../shared/core/redux/Selectors/todoSelectors.js";
 import {List} from "@mui/material";
 
 

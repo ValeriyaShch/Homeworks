@@ -1,6 +1,7 @@
 import { put, call } from 'redux-saga/effects';
 import axios from 'axios';
-import swapiSlice from "../redux/slice.js";
+import swapiSlice from "../../redux/Slices/swapiSlice.js";
+
 function* callGetSwapiDataWorker(action) {
   const { payload } = action;
   console.log('GET DATA', action);

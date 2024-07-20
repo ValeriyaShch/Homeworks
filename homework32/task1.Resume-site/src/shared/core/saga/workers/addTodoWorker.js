@@ -1,5 +1,5 @@
 import {put, delay} from 'redux-saga/effects';
-import todoSlice from "../../slice/todoSlice.js";
+import todoSlice from "../../redux/Slices/todoSlice.js";
 
 function* addTodoDataWorker(action) {
     const {payload} = action;

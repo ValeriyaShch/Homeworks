@@ -1,6 +1,6 @@
 import {put, select, delay} from 'redux-saga/effects';
-import todoSlice from "../../slice/todoSlice.js";
-import selectors from "../../selectors.js";
+import todoSlice from "../../redux/Slices/todoSlice.js";
+import selectors from "../../redux/Selectors/todoSelectors.js";
 
 
 function* editTodoWorker(action) {

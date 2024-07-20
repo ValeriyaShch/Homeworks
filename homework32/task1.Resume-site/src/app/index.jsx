@@ -7,29 +7,34 @@ import {routes} from "../shared/config/routes.js";
 import TODO from "../pages/TODO/TODO.jsx";
 import Swapi from "../pages/SWAPI/Swapi.jsx";
 import {Container} from "@mui/material";
+// import {store} from "../pages/SWAPI/core/redux/store.js";
+import {Provider} from "react-redux";
+import {store} from "../shared/core/redux/store.js";
 
 function App() {
     return (
         <BrowserRouter>
-            <ErrorBoundary>
-                <div className='content' style={{
-                    display: 'flex', flexDirection: 'column',
-                    minHeight: '100vh'
-                }}>
-                    <Header/>
-                    <main style={{flexGrow: 1}}>
-                        <Container maxWidth="lg">
-                            <Routes>
-                                <Route path={routes.main} element={<CV/>}></Route>
-                                <Route path={routes.todo} element={<TODO/>}></Route>
-                                <Route path={routes.swapi} element={<Swapi/>}></Route>
-                            </Routes>
-                        </Container>
-                    </main>
-                    <Footer/>
-                </div>
-            </ErrorBoundary>
+            <Provider store={store}>
+                <ErrorBoundary>
+                    <div className='content' style={{
+                        display: 'flex', flexDirection: 'column',
+                        minHeight: '100vh'
+                    }}>
+                        <Header/>
+                        <main style={{flexGrow: 1}}>
+                                <Container maxWidth="lg">
+                                    <Routes>
+                                        <Route path={routes.main} element={<CV/>}></Route>
+                                        <Route path={routes.todo} element={<TODO/>}></Route>
+                                        <Route path={routes.swapi} element={<Swapi/>}></Route>
+                                    </Routes>
+                                </Container>
 
+                        </main>
+                        <Footer/>
+                    </div>
+                </ErrorBoundary>
+            </Provider>
         </BrowserRouter>
     )
 }

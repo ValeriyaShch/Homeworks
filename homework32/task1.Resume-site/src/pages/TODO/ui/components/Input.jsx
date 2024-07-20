@@ -1,8 +1,8 @@
 import {Formik, Form, Field} from "formik";
 import {basicSchema} from "../../schemas/index.js";
 import {useDispatch, useSelector} from "react-redux";
-import {todoActions} from "../../core/saga/actionTypes.js";
-import selectors from "../../core/selectors.js";
+import {todoActions} from "../../../../shared/core/saga/actionTypes.js";
+import selectors from "../../../../shared/core/redux/Selectors/todoSelectors.js";
 import {Button, TextField, Paper, Box, Card, IconButton} from "@mui/material";
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 

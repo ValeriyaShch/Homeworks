@@ -1,11 +1,11 @@
 import {useSelector} from "react-redux";
-import selectors from "../../core/redux/selectors.js";
+import swapiSelectors from "../../../../shared/core/redux/Selectors/swapiSelectors.js";
 import {Box, Container, Chip, CircularProgress, Typography, TextField} from "@mui/material";
 
 export default function Card() {
-    const isLoading = useSelector(selectors.loader)
-    const data = useSelector(selectors.data)
-    const action = useSelector(selectors.action);
+    const isLoading = useSelector(swapiSelectors.loader)
+    const data = useSelector(swapiSelectors.data)
+    const action = useSelector(swapiSelectors.action);
     const parts = action.split('/');
     return (
         <>

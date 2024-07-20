@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
-import selectors from "../../core/selectors.js";
-import {todoActions} from "../../core/saga/actionTypes.js";
+import selectors from "../../../../shared/core/redux/Selectors/todoSelectors.js";
+import {todoActions} from "../../../../shared/core/saga/actionTypes.js";
 import {Button} from "@mui/material";
 
 function ClearSection() {
