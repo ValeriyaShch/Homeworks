@@ -2,7 +2,7 @@ import {useHotels} from "./hooks/useHotels.js";
 import HotelItem from "../../components/HotelItem.jsx";
 import {Grid, Typography} from "@mui/material";
 
-function Index() {
+function Hotels() {
   const {items} = useHotels();
   return (
     <>
@@ -26,4 +26,4 @@ function Index() {
   )
 }
 
-export default Index
+export default Hotels

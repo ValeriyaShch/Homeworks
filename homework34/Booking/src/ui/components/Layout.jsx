@@ -19,7 +19,7 @@ export default function Layout() {
       <ThemeProvider theme={theme}>
         <CssBaseline/>
         <Header/>
-        <Container component="main" sx={{ marginTop: '20px' }}>
+        <Container component="main" sx={{ marginTop: '15px' }}>
           <Outlet/>
         </Container>
       </ThemeProvider>

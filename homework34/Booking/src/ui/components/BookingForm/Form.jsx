@@ -54,7 +54,7 @@ export function BookingForm() {
                 type="number"
                 validate={validate.required}
                 fullWidth
-                InputProps={{inputProps: {min: 0}}}
+                InputProps={{inputProps: {min: 1}}}
                  />
             </Grid>
             <Grid item xs={6} lg={1}>
@@ -69,7 +69,7 @@ export function BookingForm() {
               />
             </Grid>
             <Grid item xs={12} lg={1}>
-              <Button loading={loading} type="submit" sx={{width: '100%', height: '55px'}}>Submit</Button>
+              <Button loading={loading} type="submit" sx={{width: '100%', height: '55px'}}>Send</Button>
             </Grid>
           </Grid>
         </Box>

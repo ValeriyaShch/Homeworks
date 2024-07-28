@@ -1,6 +1,6 @@
 import Main from "../../ui/pages/Main.jsx";
 import About from "../../ui/pages/About.jsx";
-import Index from "../../ui/pages/Hotels";
+import Hotels from "../../ui/pages/Hotels/index.jsx";
 export const route = {
   main: {
     element: <Main />,
@@ -11,7 +11,7 @@ export const route = {
     path: '/about'
   },
   hotels: {
-    element: <Index />,
+    element: <Hotels />,
     path: '/hotels'
   }
 }
